@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎯 ふわふわ♪ 的当てゲーム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game">
+  <div class="badge">🌷 みんなであそぼう 🌷</div>
+  <h1>🎯 ふわふわ♪ 的当てゲーム</h1>
+  <p class="instruction">
+    <b>エンターキーを2回押してね！</b><br>
+    ① 1回目 → 的が回る　② 2回目 → えいっ！
+  </p>
+
+  <section class="card">
+    <div class="stage">
+      <div id="target" class="target">
+        <div class="face">
+          <div class="name n1">あたり</div>
+          <div class="name n2">あんじゅ</div>
+          <div class="name n3">さや</div>
+          <div class="name n4">けんご</div>
+          <div class="name n5">じゅんいち</div>
+          <div class="center">🎯</div>
+        </div>
+      </div>
+      <div id="arrow" class="arrow">🏹</div>
+      <div class="pointer">▼</div>
+    </div>
+
+    <div id="message" class="message">エンターキーを押してスタート！</div>
+    <p id="status">🌸 準備OKだよ！ 🌸</p>
+    <button id="start">エンターでスタート！</button>
+  </section>
+
+  <p class="hint">💡 的の名前は最初から見えているよ！</p>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
