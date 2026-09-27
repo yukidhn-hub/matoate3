@@ -1,0 +1,92 @@
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;
+  font-family:"Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:#66506f;text-align:center;
+  background:radial-gradient(circle at 20% 10%,#fff 0 5px,transparent 6px),
+             radial-gradient(circle at 80% 30%,#fff 0 4px,transparent 5px),
+             linear-gradient(135deg,#fff0f7,#edf9ff 55%,#fffbe8);
+  background-size:45px 45px,60px 60px,auto;
+}
+.game{width:min(96vw,900px);margin:auto;padding:28px 12px 45px}
+.badge{display:inline-block;background:#fff;padding:7px 18px;border-radius:999px;color:#e7779f;font-weight:900;box-shadow:0 4px 14px #b88aa822}
+h1{margin:10px 0;color:#ff78a7;font-size:clamp(2.1rem,6vw,4rem);text-shadow:3px 3px #fff}
+.instruction{font-size:clamp(1rem,2.7vw,1.3rem);line-height:1.7}
+.card{padding:18px 12px 25px;border:4px solid #fff;border-radius:34px;background:#ffffffc9;box-shadow:0 18px 45px #6b4c751f}
+.stage{position:relative;width:min(82vw,570px);aspect-ratio:1;margin:auto}
+.target{
+  position:absolute;inset:4%;padding:11px;border-radius:50%;background:#fff;
+  box-shadow:0 12px 28px #5344;z-index:2;transition:transform .7s cubic-bezier(.15,.75,.2,1)
+}
+.face{
+  position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;
+  border:5px solid #fff;
+  background:conic-gradient(from -90deg,
+    #111 0 72deg,
+    #ff78a7 72deg 144deg,
+    #c8b9ff 144deg 216deg,
+    #e53935 216deg 288deg,
+    #4da3ff 288deg 360deg);
+}
+.name{
+  position:absolute;z-index:3;left:50%;top:50%;width:44%;
+  font-size:clamp(.95rem,3.3vw,2rem);font-weight:900;color:#fff;
+  text-shadow:2px 2px 3px #333;transform-origin:0 0;
+}
+.n1{transform:rotate(-54deg) translateY(-145%)}
+.n2{transform:rotate(18deg) translateY(-145%)}
+.n3{transform:rotate(90deg) translateY(-145%)}
+.n4{transform:rotate(162deg) translateY(-145%)}
+.n5{transform:rotate(234deg) translateY(-145%)}
+.n1{color:#fff}
+.center{
+  position:absolute;z-index:5;left:50%;top:50%;width:21%;aspect-ratio:1;
+  transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;
+  background:#fff;border:7px solid #ffd15c;box-shadow:0 4px 12px #5344;
+  font-size:clamp(1.4rem,4vw,2.7rem)
+}
+.target.spinning{animation:spin .72s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.arrow{
+  position:absolute;z-index:10;top:-3%;left:50%;
+  transform:translateX(-50%);font-size:clamp(2.5rem,7vw,4.7rem);
+  filter:drop-shadow(2px 3px 2px #5434)
+}
+.arrow.shoot{animation:shoot .45s ease-in forwards}
+@keyframes shoot{to{top:43%}}
+.pointer{
+  position:absolute;z-index:12;top:1%;left:50%;
+  transform:translateX(-50%);color:#e85e91;font-size:28px;text-shadow:1px 2px #fff
+}
+.message{
+  min-height:86px;display:flex;align-items:center;justify-content:center;
+  margin:16px auto 8px;padding:12px 18px;border:3px solid #fff;border-radius:24px;
+  background:#fff8fc;box-shadow:inset 0 0 0 2px #ffdce9,0 6px 15px #6450641a;
+  font-size:clamp(1.2rem,3.8vw,2.3rem);font-weight:900
+}
+.message.big{
+  position:fixed;inset:0;z-index:100;min-height:100vh;
+  border:0;border-radius:0;padding:4vw;
+  font-size:clamp(2.8rem,8vw,7.5rem);line-height:1.15;
+  animation:pop .35s ease-out;text-shadow:3px 4px #fff;
+  flex-direction:column;gap:18px;overflow:hidden
+}
+.message.big img{
+  max-width:min(86vw,850px);max-height:67vh;object-fit:contain;
+  border-radius:24px;filter:drop-shadow(0 12px 22px #0004)
+}
+.message.hit{background:#111;color:#fff;text-shadow:3px 3px #555}
+.message.anju{background:#bdefff;color:#176b91}
+.message.saya{background:linear-gradient(135deg,#eee8ff,#d9ccff,#f7e5ff);color:#765bc5}
+.message.kengo{background:#e53935;color:#fff;text-shadow:2px 3px #8e1111}
+.message.junichi{background:linear-gradient(135deg,#ddf3ff,#cfe8ff,#e5f5ff);color:#2682c7}
+.message.hit img{display:none}
+@keyframes pop{from{opacity:0;transform:scale(.72)}to{opacity:1;transform:scale(1)}}
+#status{font-weight:900;font-size:1.1rem}
+button{
+  border:3px solid #fff;border-radius:999px;padding:13px 30px;color:#fff;
+  background:linear-gradient(135deg,#ff91b6,#e978a3);font-size:clamp(1.05rem,3vw,1.35rem);
+  font-weight:900;cursor:pointer;box-shadow:0 6px #d75d89
+}
+button:active{transform:translateY(4px);box-shadow:0 2px #d75d89}
+.hint{color:#8d7795;font-weight:700}
